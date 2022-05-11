@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: NaN, g: Infinity, b: NaN, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1075705378}
   - component: {fileID: 1075705377}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 1328259116}
   - component: {fileID: 1328259115}
   m_Layer: 5
-  m_Name: Button
+  m_Name: NewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -697,7 +697,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1328259116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1819748099}
+        m_MethodName: NewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1328259116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,9 +875,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ghost Ranger
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 90a7b99379098a4469001352be6dbe20, type: 2}
-  m_sharedMaterial: {fileID: -3293475712279296238, guid: 90a7b99379098a4469001352be6dbe20,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 58f370d9a733ffe45abf32a915007692, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 58f370d9a733ffe45abf32a915007692, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -885,7 +895,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 97690656
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -950,6 +960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1819748097}
   - component: {fileID: 1819748098}
+  - component: {fileID: 1819748099}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -1004,6 +1015,18 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &1819748099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819748096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0965decb295e4941a82c17346411397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1854809248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1040,7 @@ GameObject:
   - component: {fileID: 1854809251}
   - component: {fileID: 1854809250}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
