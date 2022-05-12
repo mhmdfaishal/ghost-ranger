@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomSpawnerV : MonoBehaviour
 {
 	public GameObject[] enemies;
-	public int maxtimer = 10;
+	public int maxtimer = 20;
 	public int mintimer = 3;
 	private float timer;
 	private float timetospawn;
