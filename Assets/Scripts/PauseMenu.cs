@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button exitButton;
-
+    AudioSource audioSource;
 
     private void Start()
     {
@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour
         exitButton.onClick.AddListener(ExitGame);
         Time.timeScale = 1;
         pause.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -31,12 +32,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
         pause.SetActive(true);
+        audioSource.mute = true;
     }
     
     public void ResumeGame()
     {
         Time.timeScale = 1;
         pause.SetActive(false);
+        audioSource.mute = false;
     }
     
     public void ExitGame()

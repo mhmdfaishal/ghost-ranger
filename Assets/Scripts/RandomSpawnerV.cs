@@ -35,6 +35,7 @@ public class RandomSpawnerV : MonoBehaviour
 	}
 
 	void Spawn(int index){
+		Destroy (GameObject.FindWithTag("Enemy"));
 		Instantiate(enemies[index],new Vector3(objX,objY,transform.position.z),transform.rotation); //memunculkan musuh pada index "index"
 	}
 }

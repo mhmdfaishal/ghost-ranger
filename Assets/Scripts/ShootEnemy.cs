@@ -40,7 +40,7 @@ public class ShootEnemy : MonoBehaviour
         // string fullPath = Path.Combine(screenshotDirectory.FullName, name);
 
         // ScreenCapture.CaptureScreenshot(fullPath);
-		//Mobile
+		//Mobile 
 		captured.SetActive(false);
 		Thread.Sleep(2);
 		NativeGallery.SaveImageToGallery(texture, directoryName, name);
