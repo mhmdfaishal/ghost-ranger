@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1509693215745626037}
   m_Layer: 0
   m_Name: pocong
-  m_TagString: Enemy
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 2712371231907244385}
   m_LocalRotation: {x: 0.122727916, y: 0.71551466, z: 0.6753286, w: -0.13003094}
   m_LocalPosition: {x: -721, y: 1201, z: 1.3447453}
-  m_LocalScale: {x: 1000, y: 1000, z: 1000}
+  m_LocalScale: {x: 1500, y: 1500, z: 1500}
   m_Children:
   - {fileID: 1575698200054750275}
   - {fileID: 1006139670347409749}

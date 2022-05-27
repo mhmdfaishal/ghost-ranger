@@ -7,6 +7,7 @@ public class FollowTarget : MonoBehaviour
 	private GameObject target;
 	public float speed = 0.05f;
 
+
 	// Use this for initialization
 	void Start () {
 		target = GameObject.Find("Player");

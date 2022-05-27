@@ -4,18 +4,20 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Threading;
+using TMPro;
 
 public class ShootEnemy : MonoBehaviour
 {
-	[SerializeField] private GameObject captured;
+	
+    [SerializeField] private GameObject captured;
 	public int distanceOfRay = 20; //jarak raycast, atau titik cursor dari camera ke objek
 	private RaycastHit hit; //untuk menerima objek apa yang terkena raycast	
-	private string directoryName = "GhostGallery";
-    private string fileName = "ghost_";
+
 	// Update is called once per frame
 	private void Start(){
 		captured.SetActive(false);
 	}
+
 	void Update(){
 		Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)); //mengeluarkan raycast dari titik tengah camera
 		//Click Input
@@ -27,30 +29,29 @@ public class ShootEnemy : MonoBehaviour
 		}		
 	}
 
-	private IEnumerator Screenshot(){
-		yield return new WaitForEndOfFrame();
-		Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
 
-		texture.ReadPixels(new Rect( 0, 0, Screen.width, Screen.height), 0, 0);
-		texture.Apply();
+	public void ShowMediaPicker()
+	{
+		if (Application.isEditor)
+		{
+			Debug.Log("Can't show media picker while in editor.");
+		}
+		else
+		{
+			NativeGallery.GetImagesFromGallery((paths) =>
+			{
+				if (paths.Length == 0)
+				{
+					captured.SetActive(false);
+					Debug.Log("No images selected or the user cancelled.");
+				}
+				else
+				{
+					captured.SetActive(true);
+					Debug.Log("Image path: " + paths[0]);
+				}
+			}, "Select a PNG image", "image/png");
+		}
+	} 
 
-		string name = fileName + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png";
-		//PC
-        // DirectoryInfo screenshotDirectory = Directory.CreateDirectory(directoryName);
-        // string fullPath = Path.Combine(screenshotDirectory.FullName, name);
-
-        // ScreenCapture.CaptureScreenshot(fullPath);
-		//Mobile 
-		captured.SetActive(false);
-		Thread.Sleep(2);
-		NativeGallery.SaveImageToGallery(texture, directoryName, name);
-		Time.timeScale = 1;
-		Destroy(texture);
-	}
-	
-	public void TakeScreenshot(){
-		Time.timeScale = 0;
-		captured.SetActive(true);
-		StartCoroutine("Screenshot");
-	}
 }

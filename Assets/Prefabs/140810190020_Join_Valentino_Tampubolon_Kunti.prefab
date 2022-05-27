@@ -89,9 +89,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1769646220419585668}
   - component: {fileID: 6981266041624408945}
+  - component: {fileID: -5862031361863654838}
+  - component: {fileID: 5379775886318335019}
+  - component: {fileID: 625014949273428901}
   m_Layer: 0
   m_Name: 140810190020_Join_Valentino_Tampubolon_Kunti
-  m_TagString: Enemy
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 418253937591954737}
   m_LocalRotation: {x: 0, y: -0.99933803, z: 0, w: 0.03638216}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 80, y: 80, z: 80}
+  m_LocalScale: {x: 150, y: 150, z: 150}
   m_Children:
   - {fileID: 2478876306426305883}
   - {fileID: 5437971431804982758}
@@ -130,6 +133,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+--- !u!65 &-5862031361863654838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418253937591954737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5379775886318335019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418253937591954737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0768a105a9bd48409a689214808185f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!222 &625014949273428901
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418253937591954737}
+  m_CullTransparentMesh: 0
 --- !u!1 &609971150799476388
 GameObject:
   m_ObjectHideFlags: 0
